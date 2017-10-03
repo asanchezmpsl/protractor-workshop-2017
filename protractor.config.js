@@ -5,5 +5,5 @@ exports.config = {
     specs: ['test/Google.spec.js'],
     onPrepare: () => {
         browser.ignoreSynchronization = true;
-    } 
+    }
 }
