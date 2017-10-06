@@ -1,36 +1,37 @@
 {
-  "name": "protractor-workshop-2017",
-  "version": "1.0.0",
-  "description": "This is a Workshop about Protractor",
-  "main": "index.js",
-  "scripts": {
-    "clean": "rd /s /q dist",
-    "prebuild": "npm run clean",
-    "build": "tsc",
-    "test": "npm run build && protractor dist/protractor/config.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/asanchezmpsl/protractor-workshop-2017.git"
-  },
-  "keywords": [
-    "ui-testing",
-    "dojo",
-    "practice",
-    "protractor"
-  ],
-  "author": "Andres Sanchez Muñoz - asanchezm@psl.com.co (asanchezmpsl)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/asanchezmpsl/protractor-workshop-2017/issues"
-  },
-  "homepage": "https://github.com/asanchezmpsl/protractor-workshop-2017#readme",
-  "dependencies": {
-    "protractor": "^5.1.2"
-  },
-  "devDependencies": {
-    "@types/jasminewd2": "^2.0.3",
-    "jasmine-spec-reporter": "^4.2.1",
-    "typescript": "^2.5.3"
-  }
+    "name": "protractor-workshop-2017",
+    "version": "1.0.0",
+    "description": "This is a Workshop about Protractor",
+    "main": "index.js",
+    "scripts": {
+        "clean": "rd /s /q dist",
+        "prebuild": "npm run clean",
+        "build": "tsc",
+        "test:local": "npm run build && protractor dist/protractor/config.js",
+        "test:headless": "npm run build && protractor dist/protractor/headless.conf.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/asanchezmpsl/protractor-workshop-2017.git"
+    },
+    "keywords": [
+        "ui-testing",
+        "dojo",
+        "practice",
+        "protractor"
+    ],
+    "author": "Andres Sanchez Muñoz - asanchezm@psl.com.co (asanchezmpsl)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/asanchezmpsl/protractor-workshop-2017/issues"
+    },
+    "homepage": "https://github.com/asanchezmpsl/protractor-workshop-2017#readme",
+    "dependencies": {
+        "protractor": "^5.1.2"
+    },
+    "devDependencies": {
+        "@types/jasminewd2": "^2.0.3",
+        "jasmine-spec-reporter": "^4.2.1",
+        "typescript": "^2.5.3"
+    }
 }
