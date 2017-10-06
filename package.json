@@ -7,7 +7,7 @@
     "clean": "rd /s /q dist",
     "prebuild": "npm run clean",
     "build": "tsc",
-    "test": "npm run build && protractor dist/protractor/config.js" 
+    "test": "npm run build && protractor dist/protractor/config.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@types/jasminewd2": "^2.0.3",
+    "jasmine-spec-reporter": "^4.2.1",
     "typescript": "^2.5.3"
   }
 }
