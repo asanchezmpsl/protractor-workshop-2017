@@ -1,27 +1,34 @@
 import { $, browser } from 'protractor';
+import { MenuContentPage, AddressStepPage, BankPaymentPage, OrderResumePage, PaymentStepPage, 
+  ProductAddedModalPage, ProductDetailPage, ProductListPage, ShippingStepPage, SignInStepPage, 
+  SummaryStepPage } from '../src/page';
 
 describe('Buy a t-shirt', () => {
+  const menuContentPage: MenuContentPage = new MenuContentPage();
+  const productlistPage: ProductListPage = new ProductListPage();
+  const productdetailPage: ProductDetailPage = new ProductDetailPage();
+  const productaddedmodalPage: ProductAddedModalPage = new ProductAddedModalPage();
+  const summarystepPage: SummaryStepPage = new SummaryStepPage();
+  const signinstepPage: SignInStepPage = new SignInStepPage();
+
   beforeEach(() => {
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 120000;
   });
   it('then should be bought a t-shirt', async () => {
     await browser.get('http://automationpractice.com/');
     await(browser.sleep(10000));
-    await $('#block_top_menu > ul > li:nth-child(3) > a').click();
+    await menuContentPage.goToTShirtMenu();
     await(browser.sleep(3000));
-    await 
-      $('#center_column > ul > li > div > div.left-block > div > a.product_img_link > img').click();
+    await productlistPage.goToProduct();
+    await(browser.sleep(6000));
+    await productdetailPage.goToAddCart();
     await(browser.sleep(3000));
-    await $('#add_to_cart > button > span').click();
+    await productaddedmodalPage.goToProceedCheckOut();
     await(browser.sleep(3000));
-    await $('[style*="display: block;"] .button-container > a').click();
-    await(browser.sleep(3000));
-    await $('.cart_navigation span').click();
+    await summarystepPage.goToProceedCheckOut();
     await(browser.sleep(3000));
 
-    await $('#email').sendKeys('aperdomobo@gmail.com');
-    await $('#passwd').sendKeys('WorkshopProtractor');
-    await $('#SubmitLogin > span').click();
+    await signinstepPage.goToSignIn('aperdomobo@gmail.com', 'WorkshopProtractor');
     await(browser.sleep(3000));
 
     await $('#center_column > form > p > button > span').click();
