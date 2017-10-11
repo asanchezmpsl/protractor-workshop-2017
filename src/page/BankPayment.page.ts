@@ -1,11 +1,11 @@
 import { $, ElementFinder, promise } from 'protractor';
 
 export class BankPaymentPage {
-  private get tShirtMenu(): ElementFinder {
-    return $('#block_top_menu > ul > li:nth-child(3) > a');
+  private get payBankWire(): ElementFinder {
+    return $('#HOOK_PAYMENT > div:nth-child(1) > div > p > a');
   }
 
-  public goToTShirtMenu(): promise.Promise<void> {
-    return this.tShirtMenu.click();
+  public goToPayBanlWire(): promise.Promise<void> {
+    return this.payBankWire.click();
   }
 }

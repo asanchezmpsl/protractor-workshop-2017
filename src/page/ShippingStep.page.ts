@@ -1,11 +1,17 @@
 import { $, ElementFinder, promise } from 'protractor';
 
 export class ShippingStepPage {
-  private get tShirtMenu(): ElementFinder {
-    return $('#block_top_menu > ul > li:nth-child(3) > a');
+  private get proceedCheckOutButton(): ElementFinder {
+    return $('#form > p > button > span');
+  }
+  private get agreeTermsCheckbox(): ElementFinder {
+    return $('#cgv');
   }
 
-  public goToTShirtMenu(): promise.Promise<void> {
-    return this.tShirtMenu.click();
+  public goToAgreeTerms(): promise.Promise<void> {
+    return this.agreeTermsCheckbox.click();
+  }
+  public goToProceedCheckout() : promise.Promise<void> {
+    return this.proceedCheckOutButton.click();
   }
 }

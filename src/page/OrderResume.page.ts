@@ -1,11 +1,11 @@
 import { $, ElementFinder, promise } from 'protractor';
 
 export class OrderResumePage {
-  private get tShirtMenu(): ElementFinder {
-    return $('#block_top_menu > ul > li:nth-child(3) > a');
+  private get textOrder(): ElementFinder {
+    return $('#center_column > div > p > strong');
   }
 
-  public goToTShirtMenu(): promise.Promise<void> {
-    return this.tShirtMenu.click();
+  public goToOrderResume(): promise.Promise<string> {
+    return this.textOrder.getText();
   }
 }

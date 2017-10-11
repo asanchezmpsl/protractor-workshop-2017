@@ -9,7 +9,7 @@
         "build": "tsc",
         "test:local": "npm run build && protractor dist/protractor/config.js",
         "test:headless": "npm run build && protractor dist/protractor/headless.conf.js",
-        "test": "npm run lint -- --fix && npm run test:headless && npm run test:local",
+        "test": "npm run test:headless",
         "postinstall": "webdriver-manager update --gecko false",
         "lint": "tslint --type-check --project tsconfig.json protractor/**/*.ts test/**/*.ts src/**/*.ts"
     },

@@ -1,11 +1,11 @@
 import { $, ElementFinder, promise } from 'protractor';
 
 export class PaymentStepPage {
-  private get tShirtMenu(): ElementFinder {
-    return $('#block_top_menu > ul > li:nth-child(3) > a');
+  private get confirmOrderButton(): ElementFinder {
+    return $('#cart_navigation > button > span');
   }
 
-  public goToTShirtMenu(): promise.Promise<void> {
-    return this.tShirtMenu.click();
+  public goToConfirmOrderButton(): promise.Promise<void> {
+    return this.confirmOrderButton.click();
   }
 }
