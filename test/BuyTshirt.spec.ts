@@ -35,7 +35,7 @@ describe('Buy a t-shirt', () => {
     await(browser.sleep(3000));
     await productaddedmodalPage.proceedCheckout();
 
-    await(browser.sleep(3000));
+    await(browser.sleep(9000));
     await productaddedmodalPage.proceedCheckout();
 
     await(browser.sleep(3000));
