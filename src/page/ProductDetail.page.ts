@@ -1,11 +1,11 @@
 import { $, ElementFinder, promise } from 'protractor';
 
 export class ProductDetailPage {
-  private get buttonAddCart(): ElementFinder {
+  private get addCartButton(): ElementFinder {
     return $('#add_to_cart');
   }
 
-  public goToAddCart(): promise.Promise<void> {
-    return this.buttonAddCart.click();
+  public addCart(): promise.Promise<void> {
+    return this.addCartButton.click();
   }
 }

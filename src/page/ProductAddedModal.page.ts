@@ -1,11 +1,11 @@
 import { $, ElementFinder, promise } from 'protractor';
 
 export class ProductAddedModalPage {
-  private get checkOut(): ElementFinder {
+  private get checkoutButton(): ElementFinder {
     return $('[style*="display: block;"] .button-container > a');
   }
 
-  public goToProceedCheckOut(): promise.Promise<void> {
-    return this.checkOut.click();
+  public proceedCheckout(): promise.Promise<void> {
+    return this.checkoutButton.click();
   }
 }

@@ -4,16 +4,18 @@ export class SignInStepPage {
   private get email(): ElementFinder {
     return $('#email');
   }
+
   private get password(): ElementFinder {
     return $('#passwd');
   }
+  
   private get buttonSignIn(): ElementFinder {
     return $('#SubmitLogin > span');
   }
   
-  public goToSignIn(email: string, password: string): promise.Promise<void> {
-    this.email.sendKeys(email);
-    this.password.sendKeys(password);
-    return this.buttonSignIn.click();
+  public async goToSignIn(email: string, password: string): Promise<void> {
+    await this.email.sendKeys(email);
+    await this.password.sendKeys(password);
+    await this.buttonSignIn.click();
   }
 }

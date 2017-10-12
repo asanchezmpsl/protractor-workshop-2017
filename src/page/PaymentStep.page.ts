@@ -5,7 +5,7 @@ export class PaymentStepPage {
     return $('#cart_navigation > button > span');
   }
 
-  public goToConfirmOrderButton(): promise.Promise<void> {
+  public confirmOrder(): promise.Promise<void> {
     return this.confirmOrderButton.click();
   }
 }

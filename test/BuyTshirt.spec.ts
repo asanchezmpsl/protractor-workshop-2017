@@ -1,6 +1,14 @@
 import { browser } from 'protractor';
-import { MenuContentPage, AddressStepPage, BankPaymentPage, OrderResumePage, PaymentStepPage, 
-  ProductAddedModalPage, ProductDetailPage, ProductListPage, ShippingStepPage, SignInStepPage, 
+import { MenuContentPage, 
+  AddressStepPage, 
+  BankPaymentPage, 
+  OrderResumePage, 
+  PaymentStepPage, 
+  ProductAddedModalPage, 
+  ProductDetailPage, 
+  ProductListPage, 
+  ShippingStepPage, 
+  SignInStepPage, 
   SummaryStepPage } from '../src/page';
 
 describe('Buy a t-shirt', () => {
@@ -26,9 +34,9 @@ describe('Buy a t-shirt', () => {
     await(browser.sleep(3000));
     await productlistPage.goToProduct();
     await(browser.sleep(9000));
-    await productdetailPage.goToAddCart();
+    await productdetailPage.addCart();
     await(browser.sleep(3000));
-    await productaddedmodalPage.goToProceedCheckOut();
+    await productaddedmodalPage.proceedCheckout();
 
     await(browser.sleep(3000));
 
@@ -39,19 +47,16 @@ describe('Buy a t-shirt', () => {
     await signinstepPage.goToSignIn('aperdomobo@gmail.com', 'WorkshopProtractor');
     await(browser.sleep(6000));
 
-    await addressstepPage.goToProceedCkeckOutButton();
+    await addressstepPage.goToProceedcheckoutButton();
     await(browser.sleep(6000));
 
-    await shippingstepPage.goToAgreeTerms();
+    await shippingstepPage.agreeTermsContinue();
     await(browser.sleep(6000));
-    
-    await shippingstepPage.goToProceedCheckout();
+    await bankpaymentPage.goToPayBankWire();
     await(browser.sleep(6000));
-    await bankpaymentPage.goToPayBanlWire();
-    await(browser.sleep(6000));
-    await paymentstepPage.goToConfirmOrderButton();
+    await paymentstepPage.confirmOrder();
     await(browser.sleep(6000));
 
-    await expect(orderrResumePage.goToOrderResume()).toBe('Your order on My Store is complete.');
+    await expect(orderrResumePage.getResumeText()).toBe('Your order on My Store is complete.');
   });
 });
